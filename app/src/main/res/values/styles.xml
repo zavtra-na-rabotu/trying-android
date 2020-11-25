@@ -7,7 +7,7 @@
         <item name="android:shadowRadius">12</item>
     </style>
 
-    <style name="back_text">
+    <style name="back_button">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/white</item>
     </style>

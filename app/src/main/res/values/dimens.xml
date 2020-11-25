@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="rating_star_margin_start">3dp</dimen>
+    <dimen name="rating_star_margin_top">8dp</dimen>
+    <dimen name="actor_image_margin_start">8dp</dimen>
+    <dimen name="actor_image_margin_top">7dp</dimen>
+    <dimen name="actor_name_margin_top">6dp</dimen>
+    <dimen name="actor_name_line_spacing">2sp</dimen>
+</resources>

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#191926"
+    android:background="@color/background"
     tools:context=".MovieDetailsActivity">
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,34 +33,37 @@
         android:id="@+id/background"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/background"
+        android:src="@drawable/background"
+        android:adjustViewBounds="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/background_mask"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mask"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="@+id/background"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintTop_toTopOf="@+id/background" />
+
 
     <!-- Back button -->
-    <ImageView
-        android:id="@+id/back_arrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="59dp"
-        android:src="@drawable/ic_back_arrow"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
-        android:id="@+id/back_text"
+        android:id="@+id/back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="56dp"
         android:alpha="0.5"
         android:text="@string/back"
-        android:textAppearance="@style/back_text"
-        app:layout_constraintBottom_toBottomOf="@+id/back_arrow"
-        app:layout_constraintStart_toEndOf="@+id/back_arrow"
-        app:layout_constraintTop_toTopOf="@+id/back_arrow" />
+        android:textAppearance="@style/back_button"
+        android:drawablePadding = "8dp"
+        app:drawableLeftCompat="@drawable/ic_back_arrow"
+        app:layout_constraintStart_toStartOf="@+id/left_vertical"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <!-- Movie name -->
@@ -83,7 +86,7 @@
         android:layout_height="24dp"
         android:layout_marginBottom="8dp"
         android:alpha="0.9"
-        android:background="@drawable/ic_age_box"
+        android:background="@drawable/box_with_rounded_corners"
         app:layout_constraintBottom_toTopOf="@+id/movie_name"
         app:layout_constraintStart_toStartOf="@+id/left_vertical" />
 
@@ -117,7 +120,7 @@
         android:id="@+id/rating_star_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/rating_star_margin_top"
         android:src="@drawable/ic_filled_star"
         app:layout_constraintStart_toStartOf="@+id/left_vertical"
         app:layout_constraintTop_toBottomOf="@+id/genres_text" />
@@ -126,8 +129,8 @@
         android:id="@+id/rating_star_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="@dimen/rating_star_margin_start"
+        android:layout_marginTop="@dimen/rating_star_margin_top"
         android:src="@drawable/ic_filled_star"
         app:layout_constraintStart_toEndOf="@+id/rating_star_1"
         app:layout_constraintTop_toBottomOf="@+id/genres_text" />
@@ -136,8 +139,8 @@
         android:id="@+id/rating_star_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="@dimen/rating_star_margin_start"
+        android:layout_marginTop="@dimen/rating_star_margin_top"
         android:src="@drawable/ic_filled_star"
         app:layout_constraintStart_toEndOf="@+id/rating_star_2"
         app:layout_constraintTop_toBottomOf="@+id/genres_text" />
@@ -146,8 +149,8 @@
         android:id="@+id/rating_star_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="@dimen/rating_star_margin_start"
+        android:layout_marginTop="@dimen/rating_star_margin_top"
         android:src="@drawable/ic_filled_star"
         app:layout_constraintStart_toEndOf="@+id/rating_star_3"
         app:layout_constraintTop_toBottomOf="@+id/genres_text" />
@@ -156,8 +159,8 @@
         android:id="@+id/rating_star_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="@dimen/rating_star_margin_start"
+        android:layout_marginTop="@dimen/rating_star_margin_top"
         android:src="@drawable/ic_empty_star"
         app:layout_constraintStart_toEndOf="@+id/rating_star_4"
         app:layout_constraintTop_toBottomOf="@+id/genres_text" />
@@ -221,7 +224,7 @@
         android:id="@+id/robert_downey_jr_image"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="@dimen/actor_image_margin_top"
         android:adjustViewBounds="true"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintEnd_toStartOf="@+id/chris_evans_image"
@@ -233,8 +236,8 @@
         android:id="@+id/robert_downey_jr_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:lineSpacingExtra="2sp"
+        android:layout_marginTop="@dimen/actor_name_margin_top"
+        android:lineSpacingExtra="@dimen/actor_name_line_spacing"
         android:text="@string/robert_downey_jr_name"
         android:textAppearance="@style/actor_name"
         app:layout_constraintEnd_toEndOf="@+id/robert_downey_jr_image"
@@ -246,8 +249,8 @@
         android:id="@+id/chris_evans_image"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/actor_image_margin_top"
+        android:layout_marginStart="@dimen/actor_image_margin_start"
         android:adjustViewBounds="true"
         app:layout_constraintEnd_toStartOf="@+id/mark_ruffalo_image"
         app:layout_constraintStart_toEndOf="@+id/robert_downey_jr_image"
@@ -258,8 +261,8 @@
         android:id="@+id/chris_evans_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:lineSpacingExtra="2sp"
+        android:layout_marginTop="@dimen/actor_name_margin_top"
+        android:lineSpacingExtra="@dimen/actor_name_line_spacing"
         android:text="@string/chris_evans_name"
         android:textAppearance="@style/actor_name"
         app:layout_constraintEnd_toEndOf="@+id/chris_evans_image"
@@ -271,8 +274,8 @@
         android:id="@+id/mark_ruffalo_image"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/actor_image_margin_top"
+        android:layout_marginStart="@dimen/actor_image_margin_start"
         android:adjustViewBounds="true"
         app:layout_constraintEnd_toStartOf="@+id/chris_hemsworth_image"
         app:layout_constraintStart_toEndOf="@+id/chris_evans_image"
@@ -283,8 +286,8 @@
         android:id="@+id/mark_ruffalo_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:lineSpacingExtra="2sp"
+        android:layout_marginTop="@dimen/actor_name_margin_top"
+        android:lineSpacingExtra="@dimen/actor_name_line_spacing"
         android:text="@string/mark_ruffalo_name"
         android:textAppearance="@style/actor_name"
         app:layout_constraintEnd_toEndOf="@+id/mark_ruffalo_image"
@@ -296,8 +299,8 @@
         android:id="@+id/chris_hemsworth_image"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/actor_image_margin_top"
+        android:layout_marginStart="@dimen/actor_image_margin_start"
         android:adjustViewBounds="true"
         app:layout_constraintEnd_toEndOf="@+id/right_vertical"
         app:layout_constraintStart_toEndOf="@+id/mark_ruffalo_image"
@@ -308,8 +311,8 @@
         android:id="@+id/chris_hemsworth_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:lineSpacingExtra="2sp"
+        android:layout_marginTop="@dimen/actor_name_margin_top"
+        android:lineSpacingExtra="@dimen/actor_name_line_spacing"
         android:text="@string/chris_hemsworth_name"
         android:textAppearance="@style/actor_name"
         app:layout_constraintEnd_toEndOf="@+id/chris_hemsworth_image"
